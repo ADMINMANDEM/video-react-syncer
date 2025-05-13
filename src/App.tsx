@@ -2,6 +2,7 @@ import React, { useState, useCallback, useMemo } from 'react';
 import './App.css';
 import VideoPlayer, { PauseEvent } from './components/VideoPlayer';
 import VideoControls from './components/VideoControls';
+import { Analytics } from '@vercel/analytics/react';
 
 // Use memoization to prevent unnecessary re-renders of the VideoPlayer component
 const MemoizedVideoPlayer = React.memo(VideoPlayer);
@@ -177,6 +178,7 @@ function App() {
       <footer className="App-footer">
         <button className="reset-app-button" onClick={resetAll}>Reset App</button>
       </footer>
+      <Analytics />
     </div>
   );
 }
